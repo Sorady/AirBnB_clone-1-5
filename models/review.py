@@ -1,28 +1,20 @@
 #!/usr/bin/python3
-"""This is the review class"""
-from models.base_model import BaseModel, Base
-from os import getenv
-from sqlalchemy import Column, String, ForeignKey
-from sqlalchemy.orm import relationship
+"""This is the Review Model module.
+
+Contains the Review class that inherits from BaseModel.
+"""
+from models.base_model import BaseModel
 
 
-class Review(BaseModel, Base):
-    """This is the class for Review
-    Inherits from SQLAlchemy Base and links to the MySQL table reviews.
+class Review(BaseModel):
+    """This class defines a Review.
 
     Attributes:
-        place_id: (sqlalchemy String): The review's place id.
-        user_id: (sqlalchemy String): The review's place id.)
-        text: (sqlalchemy String): The review description
+        place_id (str): the review's place id.
+        user_id (str): the review's issuer user id.
+        text (str): the review.
     """
 
-    __tablename__ = "reviews"
-
-    if getenv('HBNB_TYPE_STORAGE') == 'db':
-        place_id = Column(String(60), ForeignKey("places.id"), nullable=False)
-        user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
-        text = Column(String(1024), nullable=False)
-    else:
-        place_id = ''
-        user_id = ''
-        text = ''
+    place_id = ""
+    user_id = ""
+    text = ""
