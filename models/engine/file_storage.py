@@ -1,84 +1,56 @@
 #!/usr/bin/python3
-"""This is the file storage class for AirBnB"""
+"""This is the File Storage module.
+
+Contains the FileStorage class.
+"""
 import json
+from os import path
+
 from models.base_model import BaseModel
-from models.user import User
-from models.state import State
-from models.city import City
 from models.amenity import Amenity
+from models.city import City
 from models.place import Place
 from models.review import Review
+from models.state import State
+from models.user import User
 
 
-class FileStorage:
-    """This class serializes instances to a JSON file and
-    deserializes JSON file to instances
+class FileStorage():
+    """This class serializes and deserializes instances to JSON and vice-versa.
+
     Attributes:
-        __file_path: path to the JSON file
-        __objects: objects will be stored
+        __file_path (str): path to the JSON file.
+        __objects (dict): will store all objects by <class name>.id.
     """
-    __file_path = "file.json"
+
+    __file_path = "storage.json"
     __objects = {}
 
-    def all(self, cls=None):
-        """Returns all the objects
-
-        If a class is specified, the method only
-        returns the objects of same type.
-
-        """
-
-        if cls:
-            same_type = dict()
-
-            for key, obj in self.__objects.items():
-                if obj.__class__ == cls:
-                    same_type[key] = obj
-
-            return same_type
-
-        return self.__objects
+    def all(self):
+        """Returns the dictionary __objects."""
+        return FileStorage.__objects
 
     def new(self, obj):
-        """sets __object to given obj
+        """Sets in __objects the obj with key <obj class name>.id.
+
         Args:
-            obj: given object
+            obj: the object to set in.
         """
-        if obj:
-            key = "{}.{}".format(type(obj).__name__, obj.id)
-            self.__objects[key] = obj
+        FileStorage.__objects["{}.{}".format(type(obj).__name__, obj.id)] = obj
 
     def save(self):
-        """serialize the file path to JSON file path
-        """
-        my_dict = {}
-        for key, value in self.__objects.items():
-            my_dict[key] = value.to_dict()
-        with open(self.__file_path, 'w', encoding="UTF-8") as f:
-            json.dump(my_dict, f)
+        """Serializes __objects to the JSON file"""
+        obj_dict = FileStorage.__objects.copy()
+        output = {k: v.to_dict() for k, v in obj_dict.items()}
+        with open(FileStorage.__file_path, "w") as f:
+            json.dump(output, f, sort_keys=True, indent=4)
 
     def reload(self):
-        """serialize the file path to JSON file path
-        """
+        """Deserializes the JSON file to __objects."""
         try:
-            with open(self.__file_path, 'r', encoding="UTF-8") as f:
-                for key, value in (json.load(f)).items():
-                    value = eval(value["__class__"])(**value)
-                    self.__objects[key] = value
-        except FileNotFoundError:
+            with open(FileStorage.__file_path, "r") as f:
+                input = json.load(f)
+                for k, v in input.items():
+                    FileStorage.__objects[k] = eval(v["__class__"])(**v)
+        except:
             pass
-
-    def delete(self, obj=None):
-        """Delete obj from __objects if it's inside
-        """
-        if obj:
-            key = "{}.{}".format(type(obj).__name__, obj.id)
-
-            if self.__objects[key]:
-                del self.__objects[key]
-                self.save()
-
-    def close(self):
-        """Deserialize the JSON file to objects
-        """
-        self.reload()
