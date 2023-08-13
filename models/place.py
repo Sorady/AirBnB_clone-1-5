@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-# Alex-reid44 nad Joyclare
+"""Contains the Place class"""
 
-"""New class inherit from BaseModel"""
+import models
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """Class Place that inherit from BaseModel"""
-
+    """Class Place that inherits from BaseModel"""
     city_id = ""
     user_id = ""
     name = ""
@@ -19,3 +18,7 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
+
+    def __init__(self, *args, **kwargs):
+        """Initialization of Place attributes"""
+        super().__init__(*args, **kwargs)
