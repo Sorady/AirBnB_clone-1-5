@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-# Alex-reid44 and Joyclare
+"""Initialize the BaseModel class and the FileStorage Class """
 
+
+from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
+
 storage = FileStorage()
 storage.reload()
