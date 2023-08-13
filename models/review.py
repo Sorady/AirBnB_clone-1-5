@@ -1,15 +1,13 @@
-#!/user/bin/python3
-""" review class """
+#!/usr/bin/python3
+# Alex-reid44 and Joyclare
+
+"""New class inherit from BaseModel"""
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """ class Review inherits from BaseModel
-        Args:
-            place_id: string - empty string: it will be the Place.id
-            user_id: string - empty string: it will be the User.id
-            text: string - empty string
-    """
+    """Class Review that inherit from BaseModel"""
+
     place_id = ""
     user_id = ""
     text = ""
