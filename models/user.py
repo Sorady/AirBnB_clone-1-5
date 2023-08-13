@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-""" Write a class User that inherits from BaseModel"""
+# Alex-reid and Joyclare
+
+"""New class inherit from BaseModel"""
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """
-        User class intherits from BaseModel
-        Args:
-            email: string - empty string
-            password: string - empty string
-            first_name: string - empty string
-            last_name: string - empty string
-    """
+    """Class User that inherit from BaseModel"""
+
     email = ""
     password = ""
     first_name = ""
     last_name = ""
+
+    def __init__(self, *args, **kwargs):
+        """Initialize constructor for BaseModel"""
+        super().__init__(*args, **kwargs)
