@@ -1,13 +1,16 @@
 #!/usr/bin/python3
-# Alex-reid44 and Joyclare
+"""Contains the review class"""
 
-"""New class inherit from BaseModel"""
+import models
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """Class Review that inherit from BaseModel"""
-
+    """Review class that inherits from BaseModel"""
     place_id = ""
     user_id = ""
     text = ""
+
+    def __init__(self, *args, **kwargs):
+        """Initialization of Review attributes"""
+        super().__init__(*args, **kwargs)
