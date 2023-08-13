@@ -1,11 +1,10 @@
-#!/user/bin/python3
-""" state class """
+#!/usr/bin/python3
+# Alex-reid44 and Joyclare
+"""New class inherit from BaseModel"""
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """ class State inherits from Model
-        Args:
-            name: string - empty string
-    """
+    """Class State that inherit from BaseModel"""
+
     name = ""
