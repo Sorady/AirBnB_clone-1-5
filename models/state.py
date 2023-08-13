@@ -1,10 +1,18 @@
 #!/usr/bin/python3
-# Alex-reid44 and Joyclare
-"""New class inherit from BaseModel"""
+"""Contains the state class"""
+
+import models
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """Class State that inherit from BaseModel"""
+    """The class State which inherits from BaseModel class
 
+    Args:
+        BaseModel (_type_): The main class which is being inherited from
+    """
     name = ""
+
+    def __init__(self, *args, **kwargs):
+        """initialization of the State Class"""
+        super().__init__(*args, **kwargs)
