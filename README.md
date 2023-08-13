@@ -1,67 +1,60 @@
-# AirBnB clone project
 
-![AirBnB](utils/images/65f4a1dd9c51265f49d0_hu98d6ceda137062fd4edf4a7d705e7570_76537_700x0_resize_box_3.png)
-## Welcome to the AirBnB clone project!
-
-# Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [The console](#The-console)
-- [Setup and Usage](#setup-and-usage)
+<p align="center"><img src= "https://github.com/fayez666/AirBnB_clone/blob/master/hbnb.png"/></p>
 
 
-# Introduction:
-Welcome to the Airbnb Clone Project! This application is designed to
-replicate the core functionalities of the popular accommodation booking platform,
-Airbnb. The project aims to provide familiar and intuitive functionalities for:
-- create a simple flow of serialization/deserialization: Instance <-> Dictionary <-> JSON string <-> file
-- create all classes used for AirBnB (User, State, City, Place…) that inherit from BaseModel
-- create the first abstracted storage engine of the project: File storage.
-- create all unittests to validate all our classes and storage engine
+# AirBnB clone - The console :ab::rocket:
+The AirBnB clone project starts now until… the end of the first year. The goal of the project is to deploy on your server a simple copy of the AirBnB website. 
 
-This README is a guide through the features, technologies used, setup instructions, and more.
+*
 
-# Features
 
-**Users(class)**: The following are to be used by the user:
-           - show - ()
-           - create - ()
-           - destroy - ()
-           - update
-           - all - ()
-**Console(command interpreter)**: Manages the objects of User class.
+## Table of contents :clipboard:
+
+ - [Description](https://github.com/fayez666/AirBnB_clone/#description-triangular_ruler)
+ - [Installation](https://github.com/fayez666/AirBnB_clone/#installation-floppy_disk)
+ - [File description](https://github.com/fayez666/AirBnB_clone/blob/master/README.md#file-description-file_folder)
+ - [Example](https://github.com/fayez666/AirBnB_clone#example-computer)
+ - [Contributors](https://github.com/fayez666/AirBnB_clone#contributors)
+
+## Description :triangular_ruler:
+
+The console is the first segment of the `AirBnB project` at `Holberton School` that will collectively cover fundamental concepts of higher level programming. The goal of `AirBnB project` is to eventually deploy our server a simple copy of the `AirBnB Website(HBnB)`. A command interpreter is created in this segment to manage objects for the `AirBnB(HBnB) website.`
+
+This is the first step towards building our first full web application: the AirBnB clone.
+
+A command interpreter to manage our Airbnb clone objects:
+
 - Create a new object (ex: a new User or a new Place)
 - Retrieve an object from a file, a database etc…
 - Do operations on objects (count, compute stats, etc…)
 - Update attributes of an object
 - Destroy an object
 
-# Technologies Used
-- **Frontend**: (Nothing yet)
-- **Backend**: Python
-- **Database**: File Storage.
-- **Version Control**: Git, GitHub
-- Here is the flow of the backend.
+<p align="center">
+<img src = "https://i.imgur.com/ROvfVRP.png"/>
+ </p>
 
-  
-![](utils/images/815046647d23428a14ca_hu68774d5216c48b4f424f088e55e7a2ed_118703_700x0_resize_box_3.png)
+## Installation :floppy_disk:
+ - Clone this repository: `git clone "https://github.com/fayez666/AirBnB_clone.git"`
+ - Access AirBnb directory: `cd AirBnB_clone`
+ - Run hbnb(interactively): `./console` and enter command
+ - Run hbnb(non-interactively): `echo "<command>" | ./console.py`
+ 
+## File description :file_folder: 
 
-# The console
-The console is a command-line interpreter that allows users to manage and manipulate instances of various classes in an application. The primary purpose of this script is to provide a way to interact with and manipulate objects by executing specific commands. The script operates within a command loop, where users can enter commands to create, retrieve, update, and delete instances of different classes.
+```
+AUTHORS     /models    test_base_model_dict.py    test_base_model.py    README.md    test_save_reload_base_model.py  
+
+```
+
+## Example :computer:
+
+<p align="center"> 
+<img src = "https://i.imgur.com/c5lYRnU.png"/>
+<img src = "https://i.imgur.com/9oWdkPQ.png"/>
+</p>
 
 
-![](utils/images/console.PNG)
-
-# Setup and Usage
-The command interpreter supports a variety of operations for managing objects within the application. It enables users to interact with the data model in a structured way. Below are the key operations that can be performed using this command interpreter:
-* Create: Create a new instance of a specified class.
-* Show: Retrieve and display information about a specific instance based on its class and ID.
-* Destroy: Delete a specific instance based on its class and ID.
-* All: Display information about all instances or instances of a specific class.
-* Update: Update attributes of a specific instance based on its class and ID.
-* Count: Count the number of instances of a specific class.
-* Quit/Exit: Terminate the command interpreter.
   
 # contributors
 - **Ahmed Elsorady** <Ahmedelsorady2015@gmail.com>
